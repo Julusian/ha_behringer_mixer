@@ -88,6 +88,7 @@ class BehringerMixerFlowHandler(config_entries.ConfigFlow, domain=DOMAIN):
                 user_input["CHANNELSENDS_CONFIG"] or False
             )
             self.init_info["BUSSENDS_CONFIG"] = user_input["BUSSENDS_CONFIG"] or False
+            self.init_info["FADER_MEDIA_PLAYERS_CONFIG"] = user_input["FADER_MEDIA_PLAYERS_CONFIG"] or False
             self.init_info["DBSENSORS"] = user_input["DBSENSORS"] or False
             self.init_info["UPSCALE_100"] = user_input["UPSCALE_100"] or False
             self.init_info["MUTE_GROUPS"] = user_input["MUTE_GROUPS"] or False
@@ -256,6 +257,7 @@ async def show_options_form(
         vol.Optional(
             "UPSCALE_100", default=existing_values.get("UPSCALE_100", False)
         ): cv.boolean,
+        vol.Optional("FADER_MEDIA_PLAYERS_CONFIG", default=existing_values.get("FADER_MEDIA_PLAYERS_CONFIG", False)): cv.boolean,
     }
 
     # Only add HEADAMPS_CONFIG if head_amps number > 0
