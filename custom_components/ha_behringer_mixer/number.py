@@ -41,6 +41,7 @@ def build_entities(coordinator):
                     entity_description=NumberEntityDescription(
                         key=entity.get("key"),
                         name=entity.get("default_name"),
+                        native_step=0.01,
                     ),
                     entity_setup=entity,
                 )
@@ -52,6 +53,7 @@ def build_entities(coordinator):
                     entity_description=NumberEntityDescription(
                         key=entity.get("key"),
                         name=entity.get("default_name"),
+                        native_step=0.01,
                     ),
                     entity_setup=entity,
                 )
